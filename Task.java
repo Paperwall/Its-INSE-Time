@@ -3,6 +3,7 @@ package start;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Task {
 	private String taskName;
@@ -17,7 +18,7 @@ public class Task {
 			String actualStartDate, String actualFinishDate){
 		super();
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		this.taskName = taskName;
 		this.taskNo = taskNo;
@@ -69,7 +70,7 @@ public class Task {
 	}
 
 	public void setStartDate(String startDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String startingDate = startDate;
 		try {
@@ -84,7 +85,7 @@ public class Task {
 	}
 
 	public void setFinishDate(String finishDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String finishingDate = finishDate;
 		try {
@@ -100,7 +101,7 @@ public class Task {
 	}
 
 	public void setActualStartDate(String actualStartDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String actualStartingDate = actualStartDate;
 		try {
@@ -115,7 +116,7 @@ public class Task {
 	}
 
 	public void setActualFinishDate(String actualFinishDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String actualFinishingDate = actualFinishDate;
 		try {
