@@ -9,12 +9,14 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import java.awt.SystemColor;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
 
 public class InputInterface extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
 	private DynamicModelObject model = new DynamicModelObject();
+	private AboutWindow about = new AboutWindow();
 	
 		private JTable table;
 		
@@ -44,26 +46,31 @@ public class InputInterface extends JFrame {
 			btnRemoveButton.setBounds(596, 537, 89, 23);
 			getContentPane().add(btnRemoveButton);
 			
-			JButton btnNewButton = new JButton("Work Breakdown Tree");
-			btnNewButton.setBounds(10, 11, 172, 23);
-			getContentPane().add(btnNewButton);
+			JButton btnWBTButton = new JButton("Work Breakdown Tree");
+			btnWBTButton.setBounds(10, 11, 172, 23);
+			getContentPane().add(btnWBTButton);
 			
-			JButton btnNewButton_1 = new JButton("Gantt Chart");
-			btnNewButton_1.setBounds(10, 45, 172, 23);
-			getContentPane().add(btnNewButton_1);
+			JButton btnGanttButton = new JButton("Gantt Chart");
+			btnGanttButton.setBounds(10, 45, 172, 23);
+			getContentPane().add(btnGanttButton);
 			
-			JButton btnNewButton_2 = new JButton("Pert Chart");
-			btnNewButton_2.setBounds(10, 79, 172, 23);
-			getContentPane().add(btnNewButton_2);
+			JButton btnPertButton = new JButton("Pert Chart");
+			btnPertButton.setBounds(10, 79, 172, 23);
+			getContentPane().add(btnPertButton);
 			
-			JButton btnNewButton_3 = new JButton("About\r\n");
-			btnNewButton_3.setBounds(10, 537, 172, 23);
-			getContentPane().add(btnNewButton_3);
+			JButton btnAboutButton = new JButton("About");
+			btnAboutButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					about.setVisible(true);
+				}
+			});
+			btnAboutButton.setBounds(10, 537, 172, 23);
+			getContentPane().add(btnAboutButton);
 			
-			JButton btnNewButton_4 = new JButton("Help");
-			btnNewButton_4.setToolTipText("About");
-			btnNewButton_4.setBounds(10, 503, 172, 23);
-			getContentPane().add(btnNewButton_4);
+			JButton btnHelpButton = new JButton("Help");
+			btnHelpButton.setToolTipText("About");
+			btnHelpButton.setBounds(10, 503, 172, 23);
+			getContentPane().add(btnHelpButton);
 		
 			
 
