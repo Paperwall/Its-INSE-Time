@@ -10,6 +10,7 @@ import javax.swing.JScrollPane;
 import java.awt.SystemColor;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 
 public class InputInterface extends JFrame {
 
@@ -23,7 +24,8 @@ public class InputInterface extends JFrame {
 		
 		public InputInterface() {
 			super();
-			setTitle("No Kit! No!");
+			setIconImage(Toolkit.getDefaultToolkit().getImage("/start/SurgeBOX.png"));
+			setTitle("Surge.BOX");
 			
 			setResizable(false);
 			setSize(new Dimension(800, 600));
@@ -39,26 +41,32 @@ public class InputInterface extends JFrame {
 			getContentPane().add(scrollPane);
 			
 			JButton btnAddButton = new JButton(new AddAction());
-			btnAddButton.setBounds(695, 537, 89, 23);
+			btnAddButton.setToolTipText("Add a new task to the table");
+			btnAddButton.setBounds(430, 537, 172, 23);
 			getContentPane().add(btnAddButton);
 			
 			JButton btnRemoveButton = new JButton(new RemoveAction());
-			btnRemoveButton.setBounds(596, 537, 89, 23);
+			btnRemoveButton.setToolTipText("Remove selected task from table");
+			btnRemoveButton.setBounds(612, 537, 172, 23);
 			getContentPane().add(btnRemoveButton);
 			
 			JButton btnWBTButton = new JButton("Work Breakdown Tree");
+			btnWBTButton.setToolTipText("Generate a Work Breakdown Tree from the table");
 			btnWBTButton.setBounds(10, 11, 172, 23);
 			getContentPane().add(btnWBTButton);
 			
 			JButton btnGanttButton = new JButton("Gantt Chart");
+			btnGanttButton.setToolTipText("Generate a Gantt Chart from the table");
 			btnGanttButton.setBounds(10, 45, 172, 23);
 			getContentPane().add(btnGanttButton);
 			
 			JButton btnPertButton = new JButton("Pert Chart");
+			btnPertButton.setToolTipText("Generate a Pert Chart from the table");
 			btnPertButton.setBounds(10, 79, 172, 23);
 			getContentPane().add(btnPertButton);
 			
 			JButton btnAboutButton = new JButton("About");
+			btnAboutButton.setToolTipText("About Surge.BOX");
 			btnAboutButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					about.setVisible(true);
@@ -68,7 +76,7 @@ public class InputInterface extends JFrame {
 			getContentPane().add(btnAboutButton);
 			
 			JButton btnHelpButton = new JButton("Help");
-			btnHelpButton.setToolTipText("About");
+			btnHelpButton.setToolTipText("Help");
 			btnHelpButton.setBounds(10, 503, 172, 23);
 			getContentPane().add(btnHelpButton);
 		
@@ -88,7 +96,7 @@ public class InputInterface extends JFrame {
 			private static final long serialVersionUID = 1L;
 
 			private AddAction() {
-	            super("Add new task");
+	            super("Add New Task");
 	        }
 
 	        public void actionPerformed(ActionEvent e) {
@@ -103,7 +111,7 @@ public class InputInterface extends JFrame {
 			private static final long serialVersionUID = 1L;
 
 			private RemoveAction() {
-	            super("Remove");
+	            super("Remove Task");
 	        }
 
 	        public void actionPerformed(ActionEvent e) {
