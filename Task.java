@@ -13,12 +13,13 @@ public class Task {
 	private Date actualStartDate;
 	private Date actualFinishDate;
 	
+	SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
+	SimpleDateFormat dateFormatSlash = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+	
 	public Task(String taskName, String taskNo, 
 			String startDate, String finishDate, 
 			String actualStartDate, String actualFinishDate){
-		super();
-		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
+		super();		
 		
 		this.taskName = taskName;
 		this.taskNo = taskNo;
@@ -26,25 +27,21 @@ public class Task {
 		try {
 			this.startDate = dateFormat.parse(startingDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 		String finishingDate = finishDate;
 		try {
 			this.finishDate = dateFormat.parse(finishingDate);
 		} catch (ParseException e) {
-				e.printStackTrace();
 		}
 		String actualStartingDate = actualStartDate;
 		try {
 			this.actualStartDate = dateFormat.parse(actualStartingDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
 	    }
 		String actualFinishingDate = actualFinishDate;
 		try {
 			this.actualFinishDate = dateFormat.parse(actualFinishingDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
 	    }
 		
 	}
@@ -70,13 +67,15 @@ public class Task {
 	}
 
 	public void setStartDate(String startDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String startingDate = startDate;
 		try {
 			this.startDate = dateFormat.parse(startingDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
+		}	
+		try {
+			this.startDate = dateFormatSlash.parse(startingDate);
+		} catch (ParseException e) {
 		}	
 	}
 
@@ -85,15 +84,16 @@ public class Task {
 	}
 
 	public void setFinishDate(String finishDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String finishingDate = finishDate;
 		try {
 			this.finishDate = dateFormat.parse(finishingDate);
 		} catch (ParseException e) {
-				e.printStackTrace();
 		}
-		
+		try {
+			this.finishDate = dateFormatSlash.parse(finishingDate);
+		} catch (ParseException e) {
+		}	
 	}
 
 	public Date getActualStartDate() {
@@ -101,14 +101,16 @@ public class Task {
 	}
 
 	public void setActualStartDate(String actualStartDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String actualStartingDate = actualStartDate;
 		try {
 			this.actualStartDate = dateFormat.parse(actualStartingDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
 	    }
+		try {
+			this.actualStartDate = dateFormatSlash.parse(actualStartingDate);
+		} catch (ParseException e) {
+		}	
 	}
 
 	public Date getActualFinishDate() {
@@ -116,13 +118,15 @@ public class Task {
 	}
 
 	public void setActualFinishDate(String actualFinishDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 		
 		String actualFinishingDate = actualFinishDate;
 		try {
 			this.actualFinishDate = dateFormat.parse(actualFinishingDate);
 		} catch (ParseException e) {
-			e.printStackTrace();
 	    }
+		try {
+			this.actualFinishDate = dateFormatSlash.parse(actualFinishingDate);
+		} catch (ParseException e) {
+		}	
 	}
 }
