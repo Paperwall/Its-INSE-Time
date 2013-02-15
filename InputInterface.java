@@ -2,7 +2,6 @@ package start;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JTable;
@@ -18,6 +17,7 @@ public class InputInterface extends JFrame {
 	
 	private DynamicModelObject model = new DynamicModelObject();
 	private AboutWindow about = new AboutWindow();
+	private WorkBreakdownTree wbt = new WorkBreakdownTree();
 	
 		private JTable table;
 		
@@ -52,8 +52,14 @@ public class InputInterface extends JFrame {
 			
 			JButton btnWBTButton = new JButton("Work Breakdown Tree");
 			btnWBTButton.setToolTipText("Generate a Work Breakdown Tree from the table");
+			btnWBTButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					wbt.setVisible(true);
+				}
+			});
 			btnWBTButton.setBounds(10, 11, 172, 23);
 			getContentPane().add(btnWBTButton);
+
 			
 			JButton btnGanttButton = new JButton("Gantt Chart");
 			btnGanttButton.setToolTipText("Generate a Gantt Chart from the table");
