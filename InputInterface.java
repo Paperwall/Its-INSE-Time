@@ -6,16 +6,16 @@ import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
-import java.awt.SystemColor;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.Toolkit;
+import java.awt.Color;
 
 public class InputInterface extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	protected static DynamicModelObject model = new DynamicModelObject();
+	static DynamicModelObject model = new DynamicModelObject();
 	private AboutWindow about = new AboutWindow();
 	private WorkBreakdownTree wbt = new WorkBreakdownTree();
 	
@@ -30,7 +30,7 @@ public class InputInterface extends JFrame {
 			setResizable(false);
 			setSize(new Dimension(800, 600));
 			setPreferredSize(new Dimension(800, 600));
-			getContentPane().setBackground(SystemColor.desktop);
+			getContentPane().setBackground(new Color(72, 61, 139));
 			getContentPane().setLayout(null);
 			
 			table = new JTable(model);
@@ -55,7 +55,6 @@ public class InputInterface extends JFrame {
 			btnWBTButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					wbt.setVisible(true);
-					wbt.drawTextArea();
 				}
 			});
 			btnWBTButton.setBounds(10, 11, 172, 23);
