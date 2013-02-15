@@ -18,14 +18,32 @@ public class WorkBreakdownTree extends JFrame{
 		setPreferredSize(new Dimension(400, 300));
 		getContentPane().setBackground(SystemColor.desktop);
 		getContentPane().setLayout(null); 
-		JTextPane wbtContent = new JTextPane();
+	}
+	
+	public void drawTextArea(){
+		JTextArea wbtContent = new JTextArea();
+		wbtContent.setBounds(0, 0, 250, 200);
+		wbtContent.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(wbtContent);
+        this.add(scrollPane, BorderLayout.CENTER);
+        
+        String fullString = "";
 		for (int i = 0; i < InputInterface.model.getRowCount(); i++){
-		      String value = (String) InputInterface.model.getValueAt(i, 1);
-		      wbtContent.setText(value);
-		      System.out.print("row traversed!"); //debug code
+			String taskName = (String) InputInterface.model.getValueAt(i, 0);
+			fullString = "\n" + taskName + fullString;
+		    System.out.print(i + "row being printed"); //debug code
 		}
-		wbtContent.setBounds(0, 0, 250, 400);
+		wbtContent.setText(reverse(fullString));
 		getContentPane().add(wbtContent);
+	}
+	
+	
+	//method to reverse the string of the wbt to turn it into correct order
+	public String reverse(String s) {
+	    if (s.length() <= 1) { 
+	        return s;
+	    }
+	    return reverse(s.substring(1, s.length())) + s.charAt(0);
 	}
 }
 

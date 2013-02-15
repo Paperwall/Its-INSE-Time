@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class Task {
 	private String taskName;
 	private String taskNo;
@@ -15,6 +16,10 @@ public class Task {
 	
 	SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 	SimpleDateFormat dateFormatSlash = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+	
+	public Task(){
+	}
+	
 	
 	public Task(String taskName, String taskNo, 
 			String startDate, String finishDate, 

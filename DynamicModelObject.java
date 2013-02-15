@@ -13,7 +13,7 @@ public class DynamicModelObject extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private final List<Task> tasks = new ArrayList<Task>();
+	protected static List<Task> tasks = new ArrayList<Task>();
 	
 	private final String[] columnHeaders = {"Task",
 			"Task No.",

@@ -15,7 +15,7 @@ public class InputInterface extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	private DynamicModelObject model = new DynamicModelObject();
+	protected static DynamicModelObject model = new DynamicModelObject();
 	private AboutWindow about = new AboutWindow();
 	private WorkBreakdownTree wbt = new WorkBreakdownTree();
 	
@@ -55,6 +55,7 @@ public class InputInterface extends JFrame {
 			btnWBTButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					wbt.setVisible(true);
+					wbt.drawTextArea();
 				}
 			});
 			btnWBTButton.setBounds(10, 11, 172, 23);
