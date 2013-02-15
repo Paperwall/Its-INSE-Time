@@ -24,7 +24,7 @@ public class InputInterface extends JFrame {
 		
 		public InputInterface() {
 			super();
-			setIconImage(Toolkit.getDefaultToolkit().getImage("/start/SurgeBOX.png"));
+			setIconImage(Toolkit.getDefaultToolkit().getImage(InputInterface.class.getResource("/start/SurgeBOX.png")));
 			setTitle("Surge.BOX");
 			
 			setResizable(false);
