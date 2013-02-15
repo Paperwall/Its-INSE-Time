@@ -1,9 +1,8 @@
 package start;
 
 import java.awt.*;
-import java.awt.Window.Type;
-
 import javax.swing.*;
+import javax.swing.text.StyledDocument;
 
 public class WorkBreakdownTree extends JFrame{  
 	
@@ -20,9 +19,11 @@ public class WorkBreakdownTree extends JFrame{
 		setPreferredSize(new Dimension(400, 300));
 		getContentPane().setBackground(SystemColor.desktop);
 		getContentPane().setLayout(null); 
-		JLabel lblNewLabel = new JLabel("THIS IS WBT LOL");
-		lblNewLabel.setBounds(0, 0, 356, 438);
-		getContentPane().add(lblNewLabel);
+		
+		JTextPane wbtContent = new JTextPane();
+		wbtContent.setText("some text");
+		wbtContent.setBounds(0, 0, 250, 400);
+		getContentPane().add(wbtContent);
+		
 	}
-
 }
