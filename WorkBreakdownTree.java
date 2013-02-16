@@ -34,6 +34,7 @@ public class WorkBreakdownTree extends JFrame{
 		wbtContent.setText(reverse(fullString));
 	    JScrollPane scrollPane = new JScrollPane(wbtContent);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setBounds(0, 0, 250, 435);
 		getContentPane().add(scrollPane);
 	}
