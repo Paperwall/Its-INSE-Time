@@ -55,6 +55,7 @@ public class InputInterface extends JFrame {
 			btnWBTButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					wbt.setVisible(true);
+					wbt.drawTextArea();
 				}
 			});
 			btnWBTButton.setBounds(10, 11, 172, 23);
